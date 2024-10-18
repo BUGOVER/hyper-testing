@@ -11,9 +11,10 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace App\Controller;
+namespace App\Controller\Http;
 
 use App\Annotation\SomeAnnotation;
+use App\Controller\AbstractController;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
 use JetBrains\PhpStorm\ArrayShape;
@@ -23,7 +24,7 @@ use JetBrains\PhpStorm\ArrayShape;
 class IndexController extends AbstractController
 {
     #[ArrayShape(['method' => 'string', 'message' => 'string'])]
-    #[RequestMapping(path: '/', methods: ['GET', 'HEAD', 'POST'])]
+    #[RequestMapping(path: '/', methods: ['GET', 'HEAD'])]
     public function index(): array
     {
         $user = $this->request->input('user', 'Hyperf');

@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\Ws;
 
 use Hyperf\Contract\OnCloseInterface;
+use Hyperf\Contract\OnHandShakeInterface;
 use Hyperf\Contract\OnMessageInterface;
 use Hyperf\Contract\OnOpenInterface;
 
-class WsController implements OnMessageInterface, OnOpenInterface, OnCloseInterface
+class WsController implements OnMessageInterface, OnOpenInterface, OnCloseInterface, OnHandShakeInterface
 {
     public function onMessage($server, $frame): void
     {
@@ -23,5 +24,10 @@ class WsController implements OnMessageInterface, OnOpenInterface, OnCloseInterf
     public function onOpen($server, $request): void
     {
         $server->push($request->fd, 'Opened');
+    }
+
+    public function onHandShake($request, $response): void
+    {
+        // TODO: Implement onHandShake() method.
     }
 }

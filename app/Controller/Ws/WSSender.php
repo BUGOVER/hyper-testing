@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\Ws;
 
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\WebSocketServer\Sender;

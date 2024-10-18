@@ -16,4 +16,4 @@ vendor/
 /phpstan.neon
 /phpunit.xml
 .vagrant
-fswatch-1.14.0
+fswatch-1.17.1

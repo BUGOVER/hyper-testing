@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Aop;
 
-use App\Annotation\SomeAnnotation;
-use App\Controller\IndexController;
+use App\Controller\Http\IndexController;
 use Hyperf\Di\Annotation\Aspect;
 use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;

@@ -13,5 +13,5 @@ declare(strict_types=1);
 
 use Hyperf\HttpServer\Router\Router;
 
-Router::addServer('ws', static fn() => App\Controller\WsController::class);
+Router::addServer('ws', static fn() => App\Controller\Ws\WsController::class);
 Router::get('/favicon.ico', static fn() => '');
